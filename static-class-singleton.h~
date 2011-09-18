@@ -1,0 +1,16 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+class Logger
+{
+public:
+     static const std::string kLogLevelDebug;
+     static const std::string kLogLevelInfo;
+     static const std::string kLogLevelError;
+     static void log(const std::string & kInMessage, const std::string& KInLevel);
+     static void log(const std::vector < std:: string >& KInMessages,const std::string& KInLevel);
+     static void teardown();
+protected:
+     static void teardown();
+}
+     
