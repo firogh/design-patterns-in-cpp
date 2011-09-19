@@ -1,0 +1,28 @@
+#include "car.h"
+
+class CarFactory
+{
+public:
+     CarFactory();
+     Car* request_car();
+     int  get_num_cars_in_production() const;
+protected:
+     virtual Car* create_car() = 0;
+private:
+     int num_cars_in_production_;
+};
+
+class ForFactory : public CarFactory
+{
+protected:
+     virtual Car* create_car();
+}
+
+class ToyoFactory : public CarFactory
+{
+protected:
+     virtual Car* create_car();
+};
+
+
+

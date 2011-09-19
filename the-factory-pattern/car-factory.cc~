@@ -1,0 +1,26 @@
+#include "car-facory.h"
+
+CarFactory:: CarFactory() : num_cars_in_production_(0)
+{
+}
+Car* CarFactory::request_car()
+{
+     num_cars_in_production_++;
+     return create_car();
+}
+
+int CarFactory:: get_num_cars_in_production() const
+{
+     return num_cars_in_production_;
+}
+
+Car* FordFactory:: create_car()
+{
+     return new Ford();
+}
+
+Car* ToyotaFactory::create_car()
+{
+     return new Toyota();
+}
+
