@@ -1,0 +1,19 @@
+#include <iostream>
+class Player
+{
+public:
+     virtual string get_name();
+     virtual string send_instant_message(const string& mesg) const;
+};
+class PlayerProxy : public Player
+{
+public:
+     virtual string send_instant_message(const string& mesg) const;
+};
+string PlayerProxy::send_instant_message(const string& mesg)
+{
+     return "The player could not be contacted.";
+}
+
+
+
